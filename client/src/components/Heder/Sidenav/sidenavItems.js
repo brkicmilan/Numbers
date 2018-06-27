@@ -56,13 +56,6 @@ const SidenavItems = ({ user }) => {
       text: 'Logout',
       link: '/user/logout',
       restricted: true
-    },
-    {
-      type: 'navItem',
-      icon: 'search',
-      text: 'Search',
-      link: '/user/search',
-      restricted: true
     }
   ]
 

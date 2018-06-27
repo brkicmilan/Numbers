@@ -23,7 +23,8 @@ class Search extends Component {
   renderItems = (phoneBook) => (
     phoneBook.list ? phoneBook.list.map(item => (
       this.state.query !== '' ?
-        item.lastname.toLowerCase().search(this.state.query.toLowerCase()) !== -1 ?
+        item.lastname.toLowerCase().search(this.state.query.toLowerCase()) !== -1 ||
+          item.firstname.toLowerCase().search(this.state.query.toLowerCase()) !== -1 ?
           <PhoneBookItem {...item} key={item._id} />
           : null
         : <PhoneBookItem {...item} key={item._id} />
@@ -36,7 +37,7 @@ class Search extends Component {
       <div>
         <input
           className="search"
-          placeholder="Search for Last name"
+          placeholder="Search phone numbers"
           ref={input => this.search = input}
           onChange={this.handleInputChange}
         />
